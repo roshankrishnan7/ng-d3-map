@@ -32,22 +32,14 @@ export class WorldMapComponent implements OnInit, OnChanges {
   private createMap(): void {
     d3.select('svg').remove();
 
-    /*
-    const element = this.mapContainer.nativeElement;
-    const data = this.data;
-
-    const svg = d3.select(element).append('svg')
-    .attr('width', element.offsetWidth)
-    .attr('height', element.offsetHeight);
-
-    const contentWidth = element.offsetWidth - this.margin.left - this.margin.right;
-    const contentHeight = element.offsetHeight - this.margin.top - this.margin.bottom;
-
-*/
     let width = 900;
     let height = 600;
 
-    let projection = d3.geoMercator();
+    let link = {type: "LineString", coordinates: [[30, 90], [40, -74]]}
+
+    let projection = d3.geoMercator()
+    .scale(85)
+    .translate([width/2, height/2*1.3]);
 
     let svg = d3.select('body').append('svg')
       .attr('width', width)
@@ -55,25 +47,28 @@ export class WorldMapComponent implements OnInit, OnChanges {
     let path = d3.geoPath()
       .projection(projection);
 
-      /*
-    const projection = d3.geoNaturalEarth1()
-    .scale(contentWidth / 1.3 / Math.PI)
-    .translate([contentWidth / 2, contentHeight / 2]);
-    */
-
     let g = svg.append('g');
     g.attr('class', 'map');
 
-    d3.json("https://raw.githubusercontent.com/cszang/dendrobox/master/data/world-110m2.json")
+    d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
     .then(function(topology: any) {
-      console.log("----->", topology.feature);
-      g.selectAll('path')
-      .data(t.feature(topology, topology.objects.countries).features)
-      .enter()
-      .append('path')
-      .attr('d', path);
-      console.log("ending json calling1");
-
+      g.selectAll("path")
+      .data(topology.features)
+      .enter().append("path")
+            .attr("fill", "#b8b8b8")
+            .attr("d", d3.geoPath()
+                .projection(projection)
+            )
+            .style("stroke", "#fff")
+            .style("stroke-width", 0);
+            g.append("path")
+            .attr("d", path(link))
+            .style("fill", "none")
+            .style("stroke", "orange")
+            .style("stroke-width", 7)
+            .style("z-index", 10);        
     });
+
+    
   }
 }

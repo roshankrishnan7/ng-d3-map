@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
 import { DataModel } from 'src/data/data.model';
 
 @Component({
@@ -14,6 +14,6 @@ export class AppComponent {
   data: Observable<DataModel>;
 
   constructor(private http: HttpClient) {
-    //this.data = this.http.get<DataModel>('data/world-110m.json');
+    this.data = this.http.get<any>("../data/world-110m.json");
   }
 }
