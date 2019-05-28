@@ -14,6 +14,6 @@ export class AppComponent {
   data: Observable<DataModel>;
 
   constructor(private http: HttpClient) {
-    this.data = this.http.get<DataModel>('data/world-110m.geojson');
+    //this.data = this.http.get<DataModel>('data/world-110m.json');
   }
 }
