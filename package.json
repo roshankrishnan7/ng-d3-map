@@ -25,7 +25,9 @@
     "d3-geo": "^1.11.3",
     "d3-geo-projection": "^2.7.0",
     "rxjs": "~6.3.3",
+    "topojson": "^3.0.2",
     "tslib": "^1.9.0",
+    "@types/d3": "^5.7.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -33,7 +35,6 @@
     "@angular/cli": "~7.3.8",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/d3": "^5.7.2",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
