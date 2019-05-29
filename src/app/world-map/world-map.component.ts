@@ -85,7 +85,7 @@ export class WorldMapComponent implements OnInit, OnChanges {
       .attr("d", d3.geoPath()
         .projection(projection
           .center([-92.1193, 32.5093])
-          .scale(300))
+          .scale(85))
       )
       .style("stroke", "#fff")
       .style("stroke-width", 0)
@@ -103,31 +103,28 @@ export class WorldMapComponent implements OnInit, OnChanges {
       */
 //Add city
       let hue = 0;
-      city.map(function(d) {  // Create an object for holding dataset
+      city.map(function(d: any) {  // Create an object for holding dataset
         hue += 0.36                // Create property for each circle, give it value from color
         d.color = 'hsl(' + hue + ', 100%, 50%)';
       });
 
-      g.selectAll('circle')
+      g.selectAll('.mark')
       .data(city)
       .enter()
-      .append('circle')
-      .attr('cx', function(d: any) {
-        if(d.location) {
-          return projection([d.location.longitude, d.location.latitude])[0];
-        }
-      })
-      .attr('cy', function(d: any) {
-        if(d.location) {
-          return projection([d.location.longitude, d.location.latitude])[1];
-        }
-      })
-      .attr('r', 5)
-      .style('fill', function(d: any) {
-        return d.color;
-      })
+      .append("svg:path")
+      .attr("class", "marker")
+      .attr("d", "M0,0l-8.8-17.7C-12.1-24.3-7.4-32,0-32h0c7.4,0,12.1,7.7,8.8,14.3L0,0z")/*
+      .attr('width', 20)
+      .attr('height', 20)
+      .attr("xlink:href", "../../assets/sculpture.png") */
+      .attr("transform", function(d: any) {return "translate(" + projection([d.location.longitude , d.location.latitude ] ) + ")";})
+
+        
+      /*
+      .attr('r', 5)*/
+      .style('fill', '#31558d') 
       .on('mouseover', function(d: any) {
-        d3.select(this).style('fill', 'black'); 
+        d3.select(this).style('fill', '#8d3155'); 
         d3.select('#name').text(d.name);
         d3.select('#description').text(d.description);
         d3.select('#tooltip')
@@ -138,7 +135,7 @@ export class WorldMapComponent implements OnInit, OnChanges {
       })
       //Add Event Listeners | mouseout
       .on('mouseout', function(d: any) { 
-        d3.select(this).style('fill', d.color);
+        d3.select(this).style('fill', '#31558d');
         d3.select('#tooltip')
           .style('display', 'none');
       });
