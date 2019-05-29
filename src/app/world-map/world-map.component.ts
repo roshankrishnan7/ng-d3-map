@@ -129,8 +129,7 @@ export class WorldMapComponent implements OnInit, OnChanges {
       .on('mouseover', function(d: any) {
         d3.select(this).style('fill', 'black'); 
         d3.select('#name').text(d.name);
-        d3.select('#latitude').text(d.location.latitude);
-        d3.select('#longitude').text(d.location.longitude);
+        d3.select('#description').text(d.description);
         d3.select('#tooltip')
           .style('left', (d3.event.pageX + 20) + 'px')
           .style('top', (d3.event.pageY - 80) + 'px')
