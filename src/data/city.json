@@ -1,6 +1,22 @@
-[
-    {
+[{
+    "name": "Covent garden, London",
+    "description": "On her Majesty Queen Elizabeth the Queen Mother's 100th Birthday, in London, U.K., on Aug. 4, 2000 - Aden and Karena sculpted a lifesize figure of the Queen Mother live in Trafalgar Square on her birthday. The sculpture is cast in bronze.",
+    "location": {
+      "latitude": 51.5117,
+      "longitude": -0.1240
+    }
+  },
+  {
+    "name": "Sydney, Australia",
+    "description": "The statue was brought to Australia in 2001",
+    "location": {
+      "latitude": -33.8688,
+      "longitude": 151.2093
+    }
+  },
+  {
     "name": "Monroe, Louisiana",
+    "description": "The status is currently situated here",
     "location": {
       "latitude": 32.5093,
       "longitude": -92.1193
@@ -8,38 +24,39 @@
   },
   {
     "name": "New York",
+    "description": "On its way",
     "location": {
       "latitude": 40.7128,
       "longitude": -74.0060
     }
-  }
-  ,
+  },
   {
     "name": "Covent garden, London",
+    "description": "To UK",
     "location": {
       "latitude": 51.5117,
       "longitude": -0.1240
     }
-  }
-  ,
+  },
   {
     "name": "York",
+    "description": "some text",
     "location": {
       "latitude": 53.9600,
       "longitude": -1.0873
     }
-  }
-  ,
+  },
   {
     "name": "Dunvegan Castle, Isle of Skye",
+    "description": "text",
     "location": {
       "latitude": 57.4484,
       "longitude": -6.5901
     }
-  }
-  ,
+  },
   {
-    "name": "Back to London for the draw",
+    "name": "London",
+    "description": "Exhibition",
     "location": {
       "latitude": 51.5074,
       "longitude": -0.1278
