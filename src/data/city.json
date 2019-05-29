@@ -2,46 +2,46 @@
     {
     "name": "Monroe, Louisiana",
     "location": {
-      "latitude": 32.5093,
-      "longitude": -92.1193
+      "latitude": -32.5093,
+      "longitude": 92.1193
     }
   },
   {
     "name": "New York",
     "location": {
-      "latitude": 40.7128,
-      "longitude": -74.0060
+      "latitude": -40.7128,
+      "longitude": 74.0060
     }
   }
   ,
   {
     "name": "Covent garden, London",
     "location": {
-      "latitude": 51.5117,
-      "longitude": -0.1240
+      "latitude": -51.5117,
+      "longitude": 0.1240
     }
   }
   ,
   {
     "name": "York",
     "location": {
-      "latitude": 53.9600,
-      "longitude": -1.0873
+      "latitude": -53.9600,
+      "longitude": 1.0873
     }
   }
   ,
   {
     "name": "Dunvegan Castle, Isle of Skye",
     "location": {
-      "latitude": 57.4484,
-      "longitude": -6.5901
+      "latitude": -57.4484,
+      "longitude": 6.5901
     }
   }
   ,
   {
     "name": "Back to London for the draw",
     "location": {
-      "latitude": 51.5074,
+      "latitude": -51.5074,
       "longitude": -0.1278
     }
   }
