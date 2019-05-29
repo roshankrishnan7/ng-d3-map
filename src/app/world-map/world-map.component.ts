@@ -122,9 +122,9 @@ export class WorldMapComponent implements OnInit, OnChanges {
         
       /*
       .attr('r', 5)*/
-      .style('fill', '#31558d') 
+      .style('fill', '#8d3155') 
       .on('mouseover', function(d: any) {
-        d3.select(this).style('fill', '#8d3155'); 
+        d3.select(this).style('fill', '#31558d'); 
         d3.select('#name').text(d.name);
         d3.select('#description').text(d.description);
         d3.select('#tooltip')
@@ -135,7 +135,7 @@ export class WorldMapComponent implements OnInit, OnChanges {
       })
       //Add Event Listeners | mouseout
       .on('mouseout', function(d: any) { 
-        d3.select(this).style('fill', '#31558d');
+        d3.select(this).style('fill', '#8d3155');
         d3.select('#tooltip')
           .style('display', 'none');
       });
