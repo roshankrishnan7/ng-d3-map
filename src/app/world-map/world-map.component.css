@@ -6,3 +6,41 @@
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
   }
+  #map { border:0px solid #000; }
+
+
+path {
+    stroke: red;          
+    stroke-width: 0.5px;  
+    fill: orange;        
+    z-index: 0; 
+  }
+  
+  #tooltip {
+    text-align: left;
+    padding: 16px;
+    background-color: lightsalmon;
+    border: 1px solid black;
+    width: auto;
+    opacity: 0;
+    color: black;
+    position: absolute;
+  }
+  
+  /*
+   * Footer
+   */
+  a:link    {color:orangered;  text-decoration:none}
+  a:visited {color:orangered; text-decoration:none}
+  a:hover   {color:red; text-decoration:underline}
+  
+  .tableFooter{
+    margin-top: 15px;
+  }
+  .footerSvg{
+    width: 32px;
+  }
+
+  circle {
+      z-index: 11;
+  }
