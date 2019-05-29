@@ -45,7 +45,7 @@ export class WorldMapComponent implements OnInit, OnChanges {
     let height = 600;
 
     let projection = d3.geoMercator()
-      .scale(85)
+      .scale(200)
       .translate([width / 2, height / 2 * 1.3]);
 
     let path = d3.geoPath()
@@ -83,7 +83,9 @@ export class WorldMapComponent implements OnInit, OnChanges {
       .enter().append("path")
       .attr("fill", "#b8b8b8")
       .attr("d", d3.geoPath()
-        .projection(projection)
+        .projection(projection
+          .center([-92.1193, 32.5093])
+          .scale(300))
       )
       .style("stroke", "#fff")
       .style("stroke-width", 0)
