@@ -32,7 +32,7 @@ export class WorldMapComponent implements OnInit, OnChanges {
 
     const dataGeo = await d3.json("https://raw.githubusercontent.com/roshankrishnan7/ng-d3-map/master/src/data/world.geojson");
     const dataPath = await d3.csv("https://raw.githubusercontent.com/roshankrishnan7/ng-d3-map/master/src/data/city-coordinates.csv");
-    const dataCity = await d3.json("https://raw.githubusercontent.com/roshankrishnan7/ng-d3-map/develop/src/data/city.json");
+    const dataCity = await d3.json("https://raw.githubusercontent.com/roshankrishnan7/ng-d3-map/master/src/data/city.json");
 
     this.generateMapPath(dataGeo, dataPath, dataCity);
 
